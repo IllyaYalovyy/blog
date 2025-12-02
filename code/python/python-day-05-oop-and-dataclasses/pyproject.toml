@@ -1,0 +1,9 @@
+[project]
+name = "python-day-05-oop-and-dataclasses"
+version = "0.1.0"
+description = "Exercises for Python Day 05: OOP and Dataclasses"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"

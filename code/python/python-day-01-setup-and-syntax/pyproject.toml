@@ -1,0 +1,9 @@
+[project]
+name = "python-day-01-setup-and-syntax"
+version = "0.1.0"
+description = "Exercises for Python Day 01: Setup and Syntax"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"

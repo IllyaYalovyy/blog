@@ -1,0 +1,9 @@
+[project]
+name = "demo-post"
+version = "0.1.0"
+description = "Sample Python code associated with the demo article."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"

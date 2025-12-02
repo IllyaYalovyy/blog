@@ -1,0 +1,10 @@
+[package]
+name = "demo_post"
+version = "0.1.0"
+edition = "2021"
+
+description = "Sample Rust code associated with the demo article."
+license = "MIT"
+
+[dev-dependencies]
+pretty_assertions = "1"

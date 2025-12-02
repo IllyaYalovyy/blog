@@ -1,0 +1,9 @@
+[project]
+name = "python-day-04-functions-and-modules"
+version = "0.1.0"
+description = "Exercises for Python Day 04: Functions and Modules"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
