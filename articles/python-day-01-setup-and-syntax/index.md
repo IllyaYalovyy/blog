@@ -48,6 +48,11 @@ head, *rest = [1, 2, 3, 4]  # head=1, rest=[2,3,4]
 1 == True, 2 == True  # (True, False)
 ```
 - Use `math.isclose` for float comparison; never rely on exact equality for non-integers.
+```python
+import math
+print(0.1 + 0.2 == 0.3)             # Output: False
+print(math.isclose(0.1 + 0.2, 0.3)) # Output: True
+```
 
 ### Truthiness
 - Python loves to shortcut. It quietly treats many values as false so you can write “if items” instead of “if len(items) > 0”. Know the falsy set and your conditionals read like English.
