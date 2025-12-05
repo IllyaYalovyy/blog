@@ -98,6 +98,20 @@ arr_slice = arr[1:3]      # copy of that slice
 arr_copy = arr[:]         # shallow copy of whole list
 ```
 - Pitfall: `arr_copy = arr` aliases; changes affect both.
+- Negative Indexing
+```python
+my_list = [10, 20, 30, 40, 50]
+last_element = my_list[-1]  # last_element will be 50
+
+my_string = "hello"
+last_char = my_string[-1]  # last_char will be 'o'
+```
+- Slicing with negative step (reversing)
+```python
+original_list = [1, 2, 3, 4, 5]
+reversed_list = original_list[::-1]
+print(reversed_list) # Output: [5, 4, 3, 2, 1]
+```
 
 ### Tuples (immutable sequences)
 - Tuples are lists with the safety on. They are great for lightweight records, dict keys, and returning multiple values without fear of accidental mutation.
