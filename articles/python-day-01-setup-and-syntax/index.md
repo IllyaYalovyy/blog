@@ -87,14 +87,15 @@ nums += [3]   # same list grows; like extend
 ```
 
 ### Lists (mutable sequences)
-- Lists are your workhorse for LeetCode: they resize fast at the end, slice cleanly, and support O(1) append/pop from the tail. Just remember that slicing creates copies, while index assignment mutates in place.
+- Lists are your workhorse for LeetCode: they resize fast at the end, slice cleanly, and support O(1) append/pop from the tail. A slice expression (`arr[1:3]`) makes a new list; assigning to a slice (`arr[1:3] = [...]`) mutates the original list in-place.
 - Ordered, indexable, sliceable, grow/shrink in place.
 ```python
 arr = [1, 2, 3]
 arr.append(4)
 arr.extend([5, 6])
 arr[0] = 99
-arr_slice = arr[1:3]      # copy of that slice
+arr_slice = arr[1:3]      # new list with elements 1..2
+arr[1:3] = [10]           # in-place replace elements 1..2
 arr_copy = arr[:]         # shallow copy of whole list
 ```
 - Pitfall: `arr_copy = arr` aliases; changes affect both.
@@ -158,7 +159,25 @@ b = a
 b.append(3)
 # both a and b now see [1, 2, 3]
 ```
-- Create shallow copies when you need independence: `list(a)`, `a[:]`, `set(s)`, `dict(m)`.
+- Create shallow copies when you need independence: `list(a)`, `a[:]`, `set(s)`, `dict(m)`. Shallow copies duplicate the container but keep references to the same inner objects.
+```python
+nested = [[1], [2]]
+copy1 = list(nested)   # shallow copy; inner lists are shared
+copy1[0].append(99)
+print(nested)  # [[1, 99], [2]] because inner list was shared
+```
+
+### Imports and modules (standard library first)
+- Imports load code once per process; future imports reuse the already-loaded module. Prefer the standard library before reaching for external packages.
+```python
+import math                    # whole module
+from math import sqrt, pi      # select names (keeps math.sqrt available too)
+import datetime as dt          # alias for brevity
+from collections import Counter  # common utility module
+```
+- Avoid `from module import *` outside REPLs; it hides where names come from and can shadow locals.
+- Python finds modules via `sys.path` (current directory first, then installed packages). In packages, use explicit relative imports: `from .helpers import clean`.
+- Standard-library hits you will use constantly: `pathlib` for paths, `datetime` for timestamps, `collections` for counters/defaultdicts, `itertools` for fast combinatorics, `math`/`statistics` for numerics, `json`/`csv` for simple I/O, `typing` for annotations.
 
 ### Minimal I/O for fast tests
 - For quick practice and LeetCode-style inputs, keep I/O lean: strip whitespace, cast to `int`, and print results with clear spacing.
