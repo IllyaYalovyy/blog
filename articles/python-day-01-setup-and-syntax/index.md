@@ -1,7 +1,4 @@
----
-title: "Python Day 01: Setup and Syntax"
-status: draft
----
+# Python Day 01: Setup and Syntax
 
 ## Topic Overview
 - Core syntax for professional Python: variables, numeric types, booleans, truthiness, indentation, expressions, operators, lists, tuples, sets, dicts.
