@@ -110,8 +110,7 @@ last_char = my_string[-1]  # last_char will be 'o'
 - Slicing with negative step (reversing)
 ```python
 original_list = [1, 2, 3, 4, 5]
-reversed_list = original_list[::-1]
-print(reversed_list) # Output: [5, 4, 3, 2, 1]
+reversed_list = original_list[::-1] # Result: [5, 4, 3, 2, 1]
 ```
 
 ### Tuples (immutable sequences)
